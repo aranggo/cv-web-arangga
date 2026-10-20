@@ -193,6 +193,21 @@
     $('#architecture-details').innerHTML = `<p class="section-label">${escapeHtml(t('architecture.map'))}</p><h3>${escapeHtml(copy.title)}</h3><p>${escapeHtml(copy.description)}</p><div class="node-detail" id="node-detail">${escapeHtml(t('architecture.selectNode'))}</div>`;
   };
 
+  const renderDocumentation = () => {
+    $('#documentation-grid').innerHTML = data.documentation.map((item, index) => {
+      const copy = localizedItem('documentation', index);
+      const image = escapeHtml(item.image);
+      const title = copy.title || item.alt;
+      const description = copy.description || '';
+      return `
+      <a class="documentation-card reveal" href="${image}" target="_blank" rel="noreferrer" aria-label="${escapeHtml(`${title} — ${t('documentation.open')}`)}">
+        <div class="documentation-photo"><img src="${image}" alt="${escapeHtml(item.alt)}" loading="lazy" decoding="async" /></div>
+        <div class="documentation-copy"><span class="documentation-index">DATACENTER / 0${index + 1}</span><h3>${escapeHtml(title)}</h3><p>${escapeHtml(description)}</p><span class="documentation-link">${escapeHtml(t('documentation.open'))}</span></div>
+      </a>`;
+    }).join('');
+    observeReveals();
+  };
+
   const openProjectModal = (projectId) => {
     const project = data.projects.find((item) => item.id === projectId);
     if (!project) return;
@@ -275,6 +290,7 @@
       renderExperience();
       renderProjectFilters();
       renderProjects();
+      renderDocumentation();
       renderCredentials();
       renderContactLinks();
       renderArchitectureTabs();
@@ -363,6 +379,7 @@
     renderExperience();
     renderProjectFilters();
     renderProjects();
+    renderDocumentation();
     renderCredentials();
     renderContactLinks();
     renderArchitectureTabs();

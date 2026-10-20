@@ -119,6 +119,15 @@ window.CV_DATA = {
       edges: [['sender', 'gateway'], ['gateway', 'exchange'], ['gateway', 'zimbra'], ['exchange', 'dns'], ['zimbra', 'dns']]
     }
   },
+  documentation: [
+    { image: 'assets/documentation/WhatsApp%20Image%202026-10-20%20at%2014.56.15.jpeg', alt: 'Dell EMC compute and storage rack' },
+    { image: 'assets/documentation/WhatsApp%20Image%202026-10-20%20at%2014.56.16.jpeg', alt: 'Network and security appliance rack' },
+    { image: 'assets/documentation/WhatsApp%20Image%202026-10-20%20at%2014.56.17%20%281%29.jpeg', alt: 'Server and fiber infrastructure' },
+    { image: 'assets/documentation/WhatsApp%20Image%202026-10-20%20at%2014.56.17.jpeg', alt: 'Server connectivity and fiber patching' },
+    { image: 'assets/documentation/WhatsApp%20Image%202026-10-20%20at%2014.56.18%20%281%29.jpeg', alt: 'Server maintenance activity' },
+    { image: 'assets/documentation/WhatsApp%20Image%202026-10-20%20at%2014.56.18%20%282%29.jpeg', alt: 'Hardware inspection in the datacenter' },
+    { image: 'assets/documentation/WhatsApp%20Image%202026-10-20%20at%2014.56.18.jpeg', alt: 'Field maintenance on Dell EMC infrastructure' }
+  ],
   education: [{ title: 'Computer System (Bachelor\'s Degree)', organization: 'Gunadarma University', period: '2014 — 2017', detail: 'Formal education in computer systems.' }],
   certifications: [
     { title: 'AWS Certified CloudOps Engineer – Associate', organization: 'Amazon Web Services Training and Certification', issued: 'March 29, 2026', issuedId: '29 Maret 2026', expires: 'March 29, 2029', expiresId: '29 Maret 2029', status: 'Active', image: 'assets/certificates/aws%20cloud%20ops.jpg', imageAlt: 'AWS Certified CloudOps Engineer - Associate certificate for Abdurachman Ranggana', url: 'https://www.credly.com/badges/b0671cfd-3cfa-4dac-8b22-6845f7971d74/linked_in_profile' },
@@ -134,7 +143,7 @@ window.CV_DATA = {
   links: { linkedin: '', github: '', whatsapp: '' },
   translations: {
     en: {
-      nav: { about: 'About', skills: 'Skills', experience: 'Experience', projects: 'Projects', architecture: 'Architecture', certifications: 'Certifications', contact: 'Contact', contactMe: 'Contact me' },
+      nav: { about: 'About', skills: 'Skills', experience: 'Experience', projects: 'Projects', architecture: 'Architecture', documentation: 'Documentation', certifications: 'Certifications', contact: 'Contact', contactMe: 'Contact me' },
       hero: {
         availability: 'Open to new opportunities',
         kicker: 'IT INFRASTRUCTURE <span>/</span> CLOUD ENGINEERING',
@@ -177,13 +186,24 @@ window.CV_DATA = {
           messaging: { title: 'Enterprise messaging services', description: 'A simplified operational flow for the messaging and gateway services in the CV.', nodes: { sender: { label: 'Sender', detail: 'Mail sender or client entering the service flow.' }, gateway: { label: 'Fortimail', detail: 'Mail gateway included in the service operations scope.' }, exchange: { label: 'Exchange', detail: 'Microsoft messaging service.' }, zimbra: { label: 'Linux Zimbra', detail: 'Linux-based email service referenced in the CV.' }, dns: { label: 'DNS / Hosting', detail: 'DNS and web hosting support layer.' } } }
         }
       },
-      credentials: { label: '06 / EDUCATION & CREDENTIALS', title: 'The foundations behind the <em>practice.</em>', education: 'Education', certifications: 'Certifications', issued: 'Issued', expires: 'Expires', verify: 'Verify credential ↗', pending: 'Verification link pending', noCert: 'No certifications added yet.', addCert: 'Only add credentials that are genuinely held in data.js.' },
-      achievements: { label: '07 / VERIFIED IMPACT', title: 'Proof over promises.', aside: 'Metrics are shown only when verified. Add measured outcomes in <code>data.js</code> when ready.', noMetrics: 'No verified metrics added yet.', addMetrics: 'Add availability, server, automation, monitoring, or cost-optimization figures only when they are available and verifiable.' },
+      documentation: {
+        label: '06 / DATACENTER DOCUMENTATION', title: 'Hands-on work inside <em>production infrastructure.</em>', aside: 'A visual record of rack, network, storage, and maintenance work in datacenter environments.', open: 'Open image ↗',
+        items: [
+          { title: 'Dell EMC compute and storage rack', description: 'Compute and storage infrastructure observed in a production datacenter.' },
+          { title: 'Network and security appliance rack', description: 'Network connectivity and security equipment supporting the infrastructure environment.' },
+          { title: 'Server and fiber infrastructure', description: 'Rack-level infrastructure, server hardware, and fiber connectivity.' },
+          { title: 'Server connectivity and fiber patching', description: 'Detailed view of server connectivity and structured fiber patching.' },
+          { title: 'Server maintenance activity', description: 'Hands-on maintenance work on enterprise server infrastructure.' },
+          { title: 'Hardware inspection in the datacenter', description: 'Inspecting hardware condition and operational readiness on site.' },
+          { title: 'Field maintenance on Dell EMC infrastructure', description: 'Practical datacenter maintenance involving Dell EMC equipment.' }
+        ]
+      },
+      credentials: { label: '07 / EDUCATION & CREDENTIALS', title: 'The foundations behind the <em>practice.</em>', education: 'Education', certifications: 'Certifications', issued: 'Issued', expires: 'Expires', verify: 'Verify credential ↗', pending: 'Verification link pending', noCert: 'No certifications added yet.', addCert: 'Only add credentials that are genuinely held in data.js.' },
       contact: { label: '08 / LET\'S CONNECT', title: 'Ready to make infrastructure <em>work harder?</em>', description: 'Have an infrastructure challenge or an opportunity to discuss? Let\'s connect.', formTitle: 'CONTACT FORM', formNote: 'mailto fallback · no backend', name: 'Name', email: 'Email', subject: 'Subject', message: 'Message', submit: 'Open email client <span>↗</span>', disclaimer: 'This form opens your email application; messages are not stored by this website.', invalid: 'Please complete your name, email, and message with a valid format.', opening: 'Opening your email application.', linkedInMissing: 'LinkedIn — not configured', githubMissing: 'GitHub — not configured', backTop: 'Back to top ↑' },
       ui: { viewResponsibilities: 'View responsibilities', all: 'All', noProjects: 'No matching projects.', tryAgain: 'Try another keyword or category.', overview: 'Overview', problem: 'Business problem', solution: 'Technical solution', outcome: 'Verified outcome', stack: 'Technology stack', notConfigured: 'Not configured' }
     },
     id: {
-      nav: { about: 'Tentang', skills: 'Keahlian', experience: 'Pengalaman', projects: 'Proyek', architecture: 'Arsitektur', certifications: 'Sertifikasi', contact: 'Kontak', contactMe: 'Hubungi saya' },
+      nav: { about: 'Tentang', skills: 'Keahlian', experience: 'Pengalaman', projects: 'Proyek', architecture: 'Arsitektur', documentation: 'Dokumentasi', certifications: 'Sertifikasi', contact: 'Kontak', contactMe: 'Hubungi saya' },
       hero: {
         availability: 'Terbuka untuk peluang baru',
         kicker: 'INFRASTRUKTUR TI <span>/</span> CLOUD ENGINEERING',
@@ -226,8 +246,19 @@ window.CV_DATA = {
           messaging: { title: 'Layanan messaging enterprise', description: 'Alur operasional sederhana untuk layanan messaging dan gateway dalam CV.', nodes: { sender: { label: 'Pengirim', detail: 'Pengirim email atau client yang masuk ke alur layanan.' }, gateway: { label: 'Fortimail', detail: 'Mail gateway yang termasuk dalam scope operasi layanan.' }, exchange: { label: 'Exchange', detail: 'Layanan messaging Microsoft.' }, zimbra: { label: 'Linux Zimbra', detail: 'Layanan email berbasis Linux yang disebutkan dalam CV.' }, dns: { label: 'DNS / Hosting', detail: 'Lapisan support DNS dan web hosting.' } } }
         }
       },
-      credentials: { label: '06 / PENDIDIKAN & SERTIFIKASI', title: 'Fondasi di balik <em>praktik.</em>', education: 'Pendidikan', certifications: 'Sertifikasi', issued: 'Diterbitkan', expires: 'Berlaku hingga', verify: 'Verifikasi credential ↗', pending: 'Link verifikasi belum tersedia', noCert: 'Belum ada sertifikasi yang ditambahkan.', addCert: 'Tambahkan hanya credential yang benar-benar dimiliki di data.js.' },
-      achievements: { label: '07 / DAMPAK TERVERIFIKASI', title: 'Bukti, bukan sekadar janji.', aside: 'Metrik hanya ditampilkan jika terverifikasi. Tambahkan hasil terukur di <code>data.js</code> jika sudah tersedia.', noMetrics: 'Belum ada metrik terverifikasi yang ditambahkan.', addMetrics: 'Tambahkan angka availability, server, otomasi, monitoring, atau optimasi biaya hanya jika tersedia dan dapat diverifikasi.' },
+      documentation: {
+        label: '06 / DOKUMENTASI DATACENTER', title: 'Pekerjaan langsung di dalam <em>infrastruktur produksi.</em>', aside: 'Dokumentasi visual pekerjaan rack, jaringan, storage, dan maintenance di lingkungan datacenter.', open: 'Buka gambar ↗',
+        items: [
+          { title: 'Rack compute dan storage Dell EMC', description: 'Infrastruktur compute dan storage yang terlihat di datacenter produksi.' },
+          { title: 'Rack jaringan dan security appliance', description: 'Perangkat konektivitas jaringan dan keamanan untuk mendukung lingkungan infrastruktur.' },
+          { title: 'Infrastruktur server dan fiber', description: 'Infrastruktur rack, hardware server, dan konektivitas fiber.' },
+          { title: 'Konektivitas server dan fiber patching', description: 'Detail konektivitas server dan penataan fiber patching.' },
+          { title: 'Aktivitas maintenance server', description: 'Pekerjaan maintenance langsung pada infrastruktur server enterprise.' },
+          { title: 'Inspeksi hardware di datacenter', description: 'Memeriksa kondisi hardware dan kesiapan operasional di lokasi.' },
+          { title: 'Maintenance infrastruktur Dell EMC', description: 'Pekerjaan maintenance datacenter pada perangkat Dell EMC.' }
+        ]
+      },
+      credentials: { label: '07 / PENDIDIKAN & SERTIFIKASI', title: 'Fondasi di balik <em>praktik.</em>', education: 'Pendidikan', certifications: 'Sertifikasi', issued: 'Diterbitkan', expires: 'Berlaku hingga', verify: 'Verifikasi credential ↗', pending: 'Link verifikasi belum tersedia', noCert: 'Belum ada sertifikasi yang ditambahkan.', addCert: 'Tambahkan hanya credential yang benar-benar dimiliki di data.js.' },
       contact: { label: '08 / MARI TERHUBUNG', title: 'Siap membuat infrastruktur <em>bekerja lebih baik?</em>', description: 'Punya tantangan infrastruktur atau peluang untuk didiskusikan? Mari terhubung.', formTitle: 'FORM KONTAK', formNote: 'fallback mailto · tanpa backend', name: 'Nama', email: 'Email', subject: 'Subjek', message: 'Pesan', submit: 'Buka aplikasi email <span>↗</span>', disclaimer: 'Form ini akan membuka aplikasi email Anda; pesan tidak disimpan oleh website.', invalid: 'Mohon lengkapi nama, email, dan pesan dengan format yang benar.', opening: 'Membuka aplikasi email Anda.', linkedInMissing: 'LinkedIn — belum dikonfigurasi', githubMissing: 'GitHub — belum dikonfigurasi', backTop: 'Kembali ke atas ↑' },
       ui: { viewResponsibilities: 'Lihat tanggung jawab', all: 'Semua', noProjects: 'Tidak ada proyek yang cocok.', tryAgain: 'Coba kata kunci atau kategori lain.', overview: 'Ringkasan', problem: 'Masalah bisnis', solution: 'Solusi teknis', outcome: 'Hasil terverifikasi', stack: 'Technology stack', notConfigured: 'Belum dikonfigurasi' }
     }
