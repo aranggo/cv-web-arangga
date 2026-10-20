@@ -86,35 +86,35 @@ window.CV_DATA = {
   ],
   architectures: {
     aws: {
-      tab: 'AWS Operations', title: 'Managed AWS environment', description: 'Simplified view of the AWS services referenced in the managed services experience.',
+      icon: 'aws', tab: 'AWS Operations', title: 'Managed AWS environment', description: 'Simplified view of the AWS services referenced in the managed services experience.',
       nodes: [
-        { id: 'users', label: 'Users / Apps', x: 8, y: 50, tone: 'muted', detail: 'Business workloads and users consuming hosted services.' },
-        { id: 'vpc', label: 'VPC / VPN', x: 35, y: 50, tone: 'cyan', detail: 'Network boundary and connectivity layer for the cloud environment.' },
-        { id: 'compute', label: 'EC2', x: 64, y: 27, tone: 'cyan', detail: 'Compute layer for workloads managed in AWS.' },
-        { id: 'storage', label: 'S3', x: 64, y: 73, tone: 'violet', detail: 'Object storage service included in the AWS operations scope.' },
-        { id: 'data', label: 'RDS', x: 91, y: 50, tone: 'amber', detail: 'Managed database service represented in the project scope.' }
+        { id: 'users', label: 'Users / Apps', icon: 'users', x: 8, y: 50, tone: 'muted', detail: 'Business workloads and users consuming hosted services.' },
+        { id: 'vpc', label: 'VPC / VPN', icon: 'aws', x: 35, y: 50, tone: 'cyan', detail: 'Network boundary and connectivity layer for the cloud environment.' },
+        { id: 'compute', label: 'EC2', icon: 'ec2', x: 64, y: 27, tone: 'cyan', detail: 'Compute layer for workloads managed in AWS.' },
+        { id: 'storage', label: 'S3', icon: 's3', x: 64, y: 73, tone: 'violet', detail: 'Object storage service included in the AWS operations scope.' },
+        { id: 'data', label: 'RDS', icon: 'rds', x: 91, y: 50, tone: 'amber', detail: 'Managed database service represented in the project scope.' }
       ],
       edges: [['users', 'vpc'], ['vpc', 'compute'], ['vpc', 'storage'], ['compute', 'data']]
     },
     hybrid: {
-      tab: 'Microsoft Hybrid', title: 'Exchange hybrid & Azure DR', description: 'Simplified view of the Microsoft environment and disaster recovery relationship.',
+      icon: 'azure', tab: 'Microsoft Hybrid', title: 'Exchange hybrid & Azure DR', description: 'Simplified view of the Microsoft environment and disaster recovery relationship.',
       nodes: [
-        { id: 'ad', label: 'Active Directory', x: 10, y: 50, tone: 'violet', detail: 'Directory foundation migrated and managed in Microsoft projects.' },
-        { id: 'exchange', label: 'Exchange On-Prem', x: 38, y: 28, tone: 'cyan', detail: 'On-premise messaging environment connected through hybrid configuration.' },
-        { id: 'o365', label: 'Office 365', x: 38, y: 73, tone: 'cyan', detail: 'Cloud messaging destination in the documented hybrid setup.' },
-        { id: 'azure', label: 'Azure DRC', x: 70, y: 50, tone: 'amber', detail: 'Disaster Recovery Center implemented to Microsoft Azure.' },
-        { id: 'recovery', label: 'Recovery flow', x: 92, y: 50, tone: 'muted', detail: 'Recovery path for continuity planning.' }
+        { id: 'ad', label: 'Active Directory', icon: 'microsoft', x: 10, y: 50, tone: 'violet', detail: 'Directory foundation migrated and managed in Microsoft projects.' },
+        { id: 'exchange', label: 'Exchange On-Prem', icon: 'microsoft', x: 38, y: 28, tone: 'cyan', detail: 'On-premise messaging environment connected through hybrid configuration.' },
+        { id: 'o365', label: 'Office 365', icon: 'microsoft365', x: 38, y: 73, tone: 'cyan', detail: 'Cloud messaging destination in the documented hybrid setup.' },
+        { id: 'azure', label: 'Azure DRC', icon: 'azure', x: 70, y: 50, tone: 'amber', detail: 'Disaster Recovery Center implemented to Microsoft Azure.' },
+        { id: 'recovery', label: 'Recovery flow', icon: 'azure', x: 92, y: 50, tone: 'muted', detail: 'Recovery path for continuity planning.' }
       ],
       edges: [['ad', 'exchange'], ['ad', 'o365'], ['exchange', 'azure'], ['o365', 'azure'], ['azure', 'recovery']]
     },
     messaging: {
-      tab: 'Messaging Flow', title: 'Enterprise messaging services', description: 'A simplified operational flow for the messaging and gateway services in the CV.',
+      icon: 'microsoft', tab: 'Messaging Flow', title: 'Enterprise messaging services', description: 'A simplified operational flow for the messaging and gateway services in the CV.',
       nodes: [
-        { id: 'sender', label: 'Sender', x: 8, y: 50, tone: 'muted', detail: 'Mail sender or client entering the service flow.' },
-        { id: 'gateway', label: 'Fortimail', x: 33, y: 50, tone: 'amber', detail: 'Mail gateway included in the service operations scope.' },
-        { id: 'exchange', label: 'Exchange', x: 59, y: 27, tone: 'cyan', detail: 'Microsoft messaging service.' },
-        { id: 'zimbra', label: 'Linux Zimbra', x: 59, y: 73, tone: 'violet', detail: 'Linux-based email service referenced in the CV.' },
-        { id: 'dns', label: 'DNS / Hosting', x: 91, y: 50, tone: 'muted', detail: 'DNS and web hosting support layer.' }
+        { id: 'sender', label: 'Sender', icon: 'users', x: 8, y: 50, tone: 'muted', detail: 'Mail sender or client entering the service flow.' },
+        { id: 'gateway', label: 'Fortimail', icon: 'fortinet', x: 33, y: 50, tone: 'amber', detail: 'Mail gateway included in the service operations scope.' },
+        { id: 'exchange', label: 'Exchange', icon: 'microsoft', x: 59, y: 27, tone: 'cyan', detail: 'Microsoft messaging service.' },
+        { id: 'zimbra', label: 'Linux Zimbra', icon: 'zimbra', x: 59, y: 73, tone: 'violet', detail: 'Linux-based email service referenced in the CV.' },
+        { id: 'dns', label: 'DNS / Hosting', icon: 'azure', x: 91, y: 50, tone: 'muted', detail: 'DNS and web hosting support layer.' }
       ],
       edges: [['sender', 'gateway'], ['gateway', 'exchange'], ['gateway', 'zimbra'], ['exchange', 'dns'], ['zimbra', 'dns']]
     }

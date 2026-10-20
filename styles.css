@@ -153,7 +153,8 @@ h1 em, h2 em { color: var(--cyan); font-style: normal; }
 .strength-item p { margin: 0; color: var(--muted); font-size: 12px; }
 
 .skill-filters, .project-toolbar, .architecture-tabs { display: flex; flex-wrap: wrap; gap: 9px; margin-bottom: 26px; }
-.filter-button, .arch-tab { padding: 9px 13px; border: 1px solid var(--line); color: var(--muted); background: transparent; font-family: var(--mono); font-size: 10px; cursor: pointer; transition: border-color .2s ease, color .2s ease, background .2s ease; }
+.filter-button, .arch-tab { display: inline-flex; align-items: center; gap: 8px; padding: 9px 13px; border: 1px solid var(--line); color: var(--muted); background: transparent; font-family: var(--mono); font-size: 10px; cursor: pointer; transition: border-color .2s ease, color .2s ease, background .2s ease; }
+.arch-tab img { width: 16px; height: 16px; object-fit: contain; }
 .filter-button:hover, .filter-button.active, .arch-tab:hover, .arch-tab.active { border-color: var(--cyan); color: var(--bg); background: var(--cyan); }
 .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 13px; }
 .skill-card { min-height: 219px; padding: 23px; border: 1px solid var(--line); background: color-mix(in srgb, var(--bg) 50%, transparent); transition: border-color .25s ease, transform .25s ease, background .25s ease; }
@@ -212,8 +213,11 @@ h1 em, h2 em { color: var(--cyan); font-style: normal; }
 .architecture-canvas::before { position: absolute; inset: 0; opacity: .25; background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px); background-size: 32px 32px; content: ''; mask-image: linear-gradient(135deg, black, transparent 75%); }
 .arch-lines { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
 .arch-line { stroke: var(--line-strong); stroke-width: 1; stroke-dasharray: 4 5; }
-.arch-node { position: absolute; z-index: 1; display: grid; place-items: center; width: 102px; min-height: 46px; padding: 7px; border: 1px solid var(--line-strong); color: var(--ink); background: var(--surface-strong); box-shadow: 0 7px 20px rgba(0,0,0,.18); font-family: var(--mono); font-size: 9px; text-align: center; transform: translate(-50%, -50%); transition: border-color .2s ease, color .2s ease, box-shadow .2s ease; }
-.arch-node:hover, .arch-node.selected { border-color: var(--cyan); color: var(--cyan); box-shadow: 0 0 25px rgba(108,229,232,.12); }
+.arch-node { position: absolute; z-index: 1; display: flex; align-items: center; justify-content: center; gap: 8px; width: 122px; min-height: 58px; padding: 9px; border: 1px solid var(--line-strong); color: var(--ink); background: color-mix(in srgb, var(--surface-strong) 88%, transparent); box-shadow: 0 7px 20px rgba(0,0,0,.18); font-family: var(--mono); font-size: 9px; text-align: left; transform: translate(-50%, -50%); transition: border-color .2s ease, color .2s ease, box-shadow .2s ease, transform .2s ease; }
+.arch-node-icon { flex: 0 0 24px; width: 24px; height: 24px; object-fit: contain; }
+.arch-node-fallback { display: grid; flex: 0 0 24px; place-items: center; width: 24px; height: 24px; color: var(--cyan); border: 1px solid currentColor; border-radius: 50%; font-size: 7px; }
+.arch-node-label { line-height: 1.25; }
+.arch-node:hover, .arch-node.selected { border-color: var(--cyan); color: var(--cyan); box-shadow: 0 0 25px rgba(108,229,232,.12); transform: translate(-50%, -50%) translateY(-3px); }
 .arch-node.tone-violet { border-color: rgba(156,140,255,.6); }
 .arch-node.tone-amber { border-color: rgba(244,199,116,.6); }
 .arch-node.tone-muted { color: var(--muted); }
@@ -335,7 +339,8 @@ h1 em, h2 em { color: var(--cyan); font-style: normal; }
   .timeline-date { margin-bottom: 13px; }
   .architecture-shell { padding: 13px; }
   .architecture-canvas { min-height: 420px; }
-  .arch-node { width: 89px; font-size: 8px; }
+  .arch-node { width: 108px; min-height: 54px; gap: 6px; padding: 7px; font-size: 8px; }
+  .arch-node-icon, .arch-node-fallback { flex-basis: 21px; width: 21px; height: 21px; }
   .contact-section { padding: 88px 0; }
   .site-footer { display: block; }
   .site-footer div { margin-top: 12px; }

@@ -7,6 +7,20 @@
   const escapeHtml = (value) => String(value == null ? '' : value).replace(/[&<>'"]/g, (character) => ({
     '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#039;', '"': '&quot;'
   }[character]));
+  const architectureIconUrls = {
+    aws: 'https://cdn.simpleicons.org/amazonaws/FF9900',
+    azure: 'https://cdn.simpleicons.org/microsoftazure/0078D4',
+    ec2: 'https://cdn.simpleicons.org/amazonec2/FF9900',
+    s3: 'https://cdn.simpleicons.org/amazons3/569A31',
+    rds: 'https://cdn.simpleicons.org/amazonrds/527FFF',
+    microsoft: 'https://cdn.simpleicons.org/microsoft/737373',
+    microsoft365: 'https://cdn.simpleicons.org/microsoft365/D83B01',
+    fortinet: 'https://cdn.simpleicons.org/fortinet/EE3124',
+    zimbra: 'https://cdn.simpleicons.org/zimbra/3399CC'
+  };
+  const architectureIcon = (icon, label = 'node') => architectureIconUrls[icon]
+    ? `<img class="arch-node-icon" src="${architectureIconUrls[icon]}" alt="" aria-hidden="true" loading="lazy" />`
+    : `<span class="arch-node-fallback" aria-hidden="true">${escapeHtml(label.slice(0, 3).toUpperCase())}</span>`;
 
   if (!data) return;
 
@@ -156,7 +170,6 @@
       const image = item.image ? `<div class="credential-image-wrap"><img class="credential-image" src="${escapeHtml(item.image)}" alt="${escapeHtml(item.imageAlt || item.title)}" loading="lazy" decoding="async" /></div>` : '';
       return `<article class="credential-item${item.image ? ' credential-item-featured' : ''}">${image}<div class="credential-status ${item.status.indexOf('Expired') >= 0 ? 'is-expired' : ''}">${escapeHtml(status)}</div><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(item.organization)}</p><p class="credential-meta">${escapeHtml(dateLine)}</p>${item.url ? `<a class="credential-link" href="${escapeHtml(item.url)}" target="_blank" rel="noreferrer">${escapeHtml(t('credentials.verify'))}</a>` : `<span class="credential-link muted">${escapeHtml(t('credentials.pending'))}</span>`}</article>`;
     }).join('') : `<div class="empty-state"><strong>${escapeHtml(t('credentials.noCert'))}</strong><p>${escapeHtml(t('credentials.addCert'))}</p></div>`;
-    $('#achievement-list').innerHTML = data.achievements.length ? data.achievements.map((item) => `<article class="achievement-card"><strong>${escapeHtml(item.metric)}</strong><p>${escapeHtml(item.description)}</p></article>`).join('') : `<div class="empty-state"><strong>${escapeHtml(t('achievements.noMetrics'))}</strong><p>${escapeHtml(t('achievements.addMetrics'))}</p></div>`;
   };
 
   const renderContactLinks = () => {
@@ -170,7 +183,7 @@
 
   const renderArchitectureTabs = () => {
     $('#architecture-tabs').innerHTML = Object.entries(data.architectures).map(([key, architecture], index) => `
-      <button class="arch-tab${index === 0 ? ' active' : ''}" type="button" role="tab" aria-selected="${index === 0}" data-architecture="${escapeHtml(key)}">${escapeHtml(t(`architecture.tabs.${key}`))}</button>`).join('');
+      <button class="arch-tab${index === 0 ? ' active' : ''}" type="button" role="tab" aria-selected="${index === 0}" data-architecture="${escapeHtml(key)}">${architectureIcon(architecture.icon, key)}<span>${escapeHtml(t(`architecture.tabs.${key}`))}</span></button>`).join('');
   };
 
   const renderArchitecture = (key) => {
@@ -182,7 +195,7 @@
       const to = nodeMap[toId];
       return `<line class="arch-line" x1="${from.x}" y1="${from.y}" x2="${to.x}" y2="${to.y}" />`;
     }).join('');
-    $('#architecture-canvas').innerHTML = `<svg class="arch-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">${lines}</svg>${architecture.nodes.map((node) => `<button class="arch-node tone-${escapeHtml(node.tone)}" type="button" style="left:${node.x}%;top:${node.y}%" data-node-id="${escapeHtml(node.id)}">${escapeHtml(copy.nodes[node.id].label)}</button>`).join('')}`;
+    $('#architecture-canvas').innerHTML = `<svg class="arch-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">${lines}</svg>${architecture.nodes.map((node) => `<button class="arch-node tone-${escapeHtml(node.tone)}" type="button" style="left:${node.x}%;top:${node.y}%" data-node-id="${escapeHtml(node.id)}">${architectureIcon(node.icon, copy.nodes[node.id].label)}<span class="arch-node-label">${escapeHtml(copy.nodes[node.id].label)}</span></button>`).join('')}`;
     $('#architecture-details').innerHTML = `<p class="section-label">${escapeHtml(t('architecture.map'))}</p><h3>${escapeHtml(copy.title)}</h3><p>${escapeHtml(copy.description)}</p><div class="node-detail" id="node-detail">${escapeHtml(t('architecture.selectNode'))}</div>`;
   };
 
