@@ -154,7 +154,7 @@ h1 em, h2 em { color: var(--cyan); font-style: normal; }
 
 .skill-filters, .project-toolbar, .architecture-tabs { display: flex; flex-wrap: wrap; gap: 9px; margin-bottom: 26px; }
 .filter-button, .arch-tab { display: inline-flex; align-items: center; gap: 8px; padding: 9px 13px; border: 1px solid var(--line); color: var(--muted); background: transparent; font-family: var(--mono); font-size: 10px; cursor: pointer; transition: border-color .2s ease, color .2s ease, background .2s ease; }
-.arch-tab img { width: 16px; height: 16px; object-fit: contain; }
+.arch-tab .arch-node-icon { flex-basis: 18px; width: 18px; height: 18px; font-size: 6px; }
 .filter-button:hover, .filter-button.active, .arch-tab:hover, .arch-tab.active { border-color: var(--cyan); color: var(--bg); background: var(--cyan); }
 .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 13px; }
 .skill-card { min-height: 219px; padding: 23px; border: 1px solid var(--line); background: color-mix(in srgb, var(--bg) 50%, transparent); transition: border-color .25s ease, transform .25s ease, background .25s ease; }
@@ -214,7 +214,14 @@ h1 em, h2 em { color: var(--cyan); font-style: normal; }
 .arch-lines { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
 .arch-line { stroke: var(--line-strong); stroke-width: 1; stroke-dasharray: 4 5; }
 .arch-node { position: absolute; z-index: 1; display: flex; align-items: center; justify-content: center; gap: 8px; width: 122px; min-height: 58px; padding: 9px; border: 1px solid var(--line-strong); color: var(--ink); background: color-mix(in srgb, var(--surface-strong) 88%, transparent); box-shadow: 0 7px 20px rgba(0,0,0,.18); font-family: var(--mono); font-size: 9px; text-align: left; transform: translate(-50%, -50%); transition: border-color .2s ease, color .2s ease, box-shadow .2s ease, transform .2s ease; }
-.arch-node-icon { flex: 0 0 24px; width: 24px; height: 24px; object-fit: contain; }
+.arch-node-icon { display: grid; flex: 0 0 28px; place-items: center; width: 28px; height: 28px; border: 1px solid currentColor; border-radius: 7px; font-family: var(--display); font-size: 7px; font-weight: 700; letter-spacing: -.04em; line-height: 1; }
+.arch-logo-aws, .arch-logo-ec2 { color: #ff9900; background: rgba(255,153,0,.1); }
+.arch-logo-azure, .arch-logo-rds { color: #58a6ff; background: rgba(0,120,212,.12); }
+.arch-logo-s3 { color: #72c86b; background: rgba(86,154,49,.12); }
+.arch-logo-microsoft, .arch-logo-microsoft365 { color: #f28c28; background: rgba(216,59,1,.12); }
+.arch-logo-fortinet { color: #ff6b63; background: rgba(238,49,36,.12); }
+.arch-logo-zimbra { color: #6cdfe8; background: rgba(51,153,204,.12); }
+.arch-logo-users { color: var(--cyan); background: rgba(108,229,232,.1); }
 .arch-node-fallback { display: grid; flex: 0 0 24px; place-items: center; width: 24px; height: 24px; color: var(--cyan); border: 1px solid currentColor; border-radius: 50%; font-size: 7px; }
 .arch-node-label { line-height: 1.25; }
 .arch-node:hover, .arch-node.selected { border-color: var(--cyan); color: var(--cyan); box-shadow: 0 0 25px rgba(108,229,232,.12); transform: translate(-50%, -50%) translateY(-3px); }

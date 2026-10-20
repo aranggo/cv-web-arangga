@@ -7,20 +7,14 @@
   const escapeHtml = (value) => String(value == null ? '' : value).replace(/[&<>'"]/g, (character) => ({
     '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#039;', '"': '&quot;'
   }[character]));
-  const architectureIconUrls = {
-    aws: 'https://cdn.simpleicons.org/amazonaws/FF9900',
-    azure: 'https://cdn.simpleicons.org/microsoftazure/0078D4',
-    ec2: 'https://cdn.simpleicons.org/amazonec2/FF9900',
-    s3: 'https://cdn.simpleicons.org/amazons3/569A31',
-    rds: 'https://cdn.simpleicons.org/amazonrds/527FFF',
-    microsoft: 'https://cdn.simpleicons.org/microsoft/737373',
-    microsoft365: 'https://cdn.simpleicons.org/microsoft365/D83B01',
-    fortinet: 'https://cdn.simpleicons.org/fortinet/EE3124',
-    zimbra: 'https://cdn.simpleicons.org/zimbra/3399CC'
+  const architectureIconLabels = {
+    aws: 'AWS', azure: 'AZ', ec2: 'EC2', s3: 'S3', rds: 'DB', microsoft: 'MS', microsoft365: '365', fortinet: 'F', zimbra: 'Z', users: 'USR'
   };
-  const architectureIcon = (icon, label = 'node') => architectureIconUrls[icon]
-    ? `<img class="arch-node-icon" src="${architectureIconUrls[icon]}" alt="" aria-hidden="true" loading="lazy" />`
-    : `<span class="arch-node-fallback" aria-hidden="true">${escapeHtml(label.slice(0, 3).toUpperCase())}</span>`;
+  const architectureIcon = (icon, label = 'node') => {
+    const iconKey = architectureIconLabels[icon] ? icon : 'users';
+    const iconLabel = architectureIconLabels[icon] || label.slice(0, 3).toUpperCase();
+    return `<span class="arch-node-icon arch-logo-${escapeHtml(iconKey)}" aria-hidden="true">${escapeHtml(iconLabel)}</span>`;
+  };
 
   if (!data) return;
 
